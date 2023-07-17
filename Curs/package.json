@@ -1,0 +1,32 @@
+{
+  "name": "curs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open:cypressQA": "npx cypress open --config-file cypressQAenv.config.js",
+    "cy:open:cypressPROD": "npx cypress open --config-file cypressPRODenv.config.js",
+    "cy:open": "npx cypress open",
+    "cy:test:all": "npx cypress run",
+    "cy:test:spec": "npx cypres run --spec cypress/e2e/ninjaTutorials/homepage.cy.js",
+    "cy:test:todo:example": "npx cypress run -- config=file cypressQAenv.js -- spec cypress/e2e/1-getting-started/todo.cy.js",
+    "cy:test:actions:locations": "npx cypress run -- config=file cypressQAenv.js -- spec cypress/e2e/2-advanced-examples/location.cy.js",
+    "cy:test:advanced:examples": "npx cypress run --spec cypress/e2e/2-advanced-examples",
+    "cy:test:firefox": "npx cypress run --browser firefox",
+    "cy:test:chrome:headed": "npx cypress run --browser chrome --headed",
+    "cy:test:edge": "npx cypress run --browser edge",
+    "cy:test:testPages:chrome": "npx cypress run --spec cypress/e2e/testPages/*.cy.js --browser chrome",
+    "cy:test:simpleForm:firefox:headed": "npx cypress run --spec cypress/e2e/elementInteractions/simpleForm.cy.js --browser firefox --headed"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.8.1"
+  },
+  "devDependencies": {
+    "@cypress/skip-test": "^2.6.1",
+    "@cypress/xpath": "^2.0.3",
+    "cy-verify-downloads": "^0.1.14",
+    "cypress-mochawesome-reporter": "^3.5.0"
+  }
+}
