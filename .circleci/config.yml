@@ -1,0 +1,16 @@
+version: '2.1'
+orbs: 
+  cypress: cypress-io/cypress@3
+
+workflows:
+  testPages:
+    jobs:
+      - cypress/run:
+          cypress-command: npx cypress run --browser chrome --spec cypress/e2e/testPages/*.cy.js
+          install-browsers: true
+
+  APItests:                      # Corrected placement of the 'APItests' workflow
+    jobs:
+      - cypress/run:
+          cypress-command: npx cypress run --spec cypress/e2e/APItests/**/*
+          install-browsers: true
